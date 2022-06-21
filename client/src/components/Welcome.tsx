@@ -13,7 +13,7 @@ const companyCommonStyles =
 const Welcome = () => {
   const { currentAccount, connectWallet, formData, handleChange, sendTransaction } = useContext(TransactionContext);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { addressTo, amount, keyword, message} = formData;
     e.preventDefault();
     if(!addressTo || !amount || !keyword || !message) return alert("Please fill all fields!");
