@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-
-import logo from "../assets/logo.png";
+import {GoZap} from "react-icons/go";
 
 type NavbarItemProps = {
   title: string;
@@ -17,9 +16,10 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav className="w-full flex md:justify-center justify-between items-center p-4">
-      <div className="md:flex-[0.5] flex-initial justify-center items-center">
-        <img src={logo} alt="logo" className="w-32 cursor-pointer" />
+    <nav className="w-full flex justify-between items-center p-4">
+      <div className="flex justify-center items-center w-[20rem] md:w-[30rem]">
+        <GoZap className="cursor-pointer text-white text-4xl" />
+        <p className="text-white text-4xl">xtractx</p>
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
         {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
