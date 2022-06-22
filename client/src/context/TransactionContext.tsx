@@ -61,8 +61,6 @@ export const TransactionProvider = ({ children }: TransactionProviderProps) => {
         })
       );
 
-      console.log(structuredTransactions);
-
       setTransactions(structuredTransactions);
     } catch (error) {
       console.log(error);
@@ -75,7 +73,6 @@ export const TransactionProvider = ({ children }: TransactionProviderProps) => {
       const accounts = await ethereum.request({ method: "eth_accounts" });
       if (accounts.length) {
         setCurrentAccount(accounts[0]);
-        console.log(accounts[0]);
         getAllTransactions();
       } else {
         alert("Please connect metamask!");
@@ -140,7 +137,7 @@ export const TransactionProvider = ({ children }: TransactionProviderProps) => {
 
       const transactionsCount = await contract.getTransactionCount();
       setTransactionCount(transactionsCount.toNumber());
-      window.reload();
+      window.location.reload();
     } catch (error) {
       console.log(error);
       throw new Error("no ethereum object");
